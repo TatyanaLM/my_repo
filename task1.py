@@ -1,0 +1,5 @@
+var1 = int(input("Press first number "))
+var2 = int(input("Press second number "))
+print(var1 + var2)
+print(var1 - var2)
+print(var1 * var2)
