@@ -7,6 +7,10 @@ cars = cars.split(',')
 
 names = sorted(names)
 cars = sorted(cars)
-
 result = list(zip_longest(names, cars, fillvalue=None))
-print(result)
+
+if len(cars) == len(names):
+    print(result)
+
+if len(cars) != len(names):
+    print("Кому-то не достанется автомобиля!")
