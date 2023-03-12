@@ -1,4 +1,4 @@
-from itertools import zip_longest
+
 cars = (input("Введите список машин: "))
 names = (input("Введите список имен: "))
 
