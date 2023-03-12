@@ -12,7 +12,7 @@ month_dict = {1: ('Январь', 31),
               12: ('Декабрь', 31)}
 
 month = int(input("Введите номер месяца: "))
-if month in month_dict:
-    print()
+if month in month_dict.keys():
+    print(month_dict[month][0],month_dict[month][1])
 else:
     print("Некорректный номер месяца")
