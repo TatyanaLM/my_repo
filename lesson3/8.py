@@ -12,7 +12,7 @@ number = {1, 3, 6, 7, 8}
 number.remove(6)
 print(number)
 
- м
+
 names_set_2 = {"Jan", "Elton", "John"}
 
 print(names_set_2.union(names_set_1))

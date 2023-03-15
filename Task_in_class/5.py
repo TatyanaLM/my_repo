@@ -6,4 +6,4 @@ def years(a):
     else:
         return "Год невисокосный"
 
-print(years(1600))
+print(years(2004))
