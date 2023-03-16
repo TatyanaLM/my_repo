@@ -1,15 +1,12 @@
 
-nominal = {5000, 1000, 500, 100, 50, 10, 5, 2, 1, 0.50, 0.10, 0.05, 0.01}
+from Hometask1_lesson5.utils import calculate_change
 
-price = int(input("Введите стоимость товара: "))
-paid = int(input("Введите купюры внесенные в кассу: "))
-paid = paid.split()
-def calculate_change(price, paid, nominal):
+price = float(input("Введите стоимость товара: "))
+paid = input("Введите купюры внесенные в кассу: ")
 
+change = calculate_change(price, paid)
 
-
-
-change = calculate_change(price, paid, nominal)
-
-print(change)
+#print(f'Сдача: {change}')
+print(f'Купюры для сдачи: {change}')
+#print(f'Количество купюр/монет: {change}')
 
