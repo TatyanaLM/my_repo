@@ -6,7 +6,9 @@ def calculate_change(price, paid):
     float_list_paid = [float(j) for j in list_paid] # делаю из разделенных значений список
     full_paid = sum(float_list_paid) # считаю сумму сколько покупатель внес, сумма элементов из списка
     if full_paid < price:
-        return "Дано мало денег"
+        raise ValueError("Дано мало денег")
+    elif full_paid == price:
+        return "Сдача не требуется"
     change = full_paid - price # считаю разницу между внесенным и стоимостью товара
     print(f'Сдача: {change}')
     result = [] #  создаю новый список, куда запишу купюры
