@@ -3,10 +3,13 @@
 
 
 numbers = [1, 2, 3]
-
+#result = []
+#r = ""
 for i in numbers:
     for j in numbers:
         if i != j:
             for l in numbers:
                 if l != i and l != j:
-                    print((i, j, l))
+                    #r = r + "(" + str(i) + ", " + str(j) + ", " + str(l) + ")" + ", "
+                    print((i, j, l), end=" ")
+#print(r)
