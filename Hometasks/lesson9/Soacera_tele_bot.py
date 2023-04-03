@@ -23,24 +23,32 @@ def read_a(message):
 
 def read_b(message, a):
     b = message.text
-    bot.send_message(message.chat.id, f"Что сделать с числами {a} и {b}?")
+    bot.send_message(message.chat.id, f"Что сделать с числами {a} и {b}? (Введите + или - или * или /)")
     bot.register_next_step_handler(message, calc, a, b)
 
 def calc(message, a, b):
     if message.text == '+':
         result = float(a) + float(b)
         bot.send_message(message.chat.id, f"{a} + {b} = {result}")
+        bot.send_message(message.from_user.id, "Посчитать ещё? /calculate")
     elif message.text == "-":
         result = float(a) - float(b)
         bot.send_message(message.chat.id, f"{a} - {b} = {result}")
+        bot.send_message(message.from_user.id, "Посчитать ещё? /calculate")
     elif message.text == "*":
         result = float(a) * float(b)
         bot.send_message(message.chat.id, f"{a} * {b} = {result}")
+        bot.send_message(message.from_user.id, "Посчитать ещё? /calculate")
     elif message.text == "/":
-        result = float(a) / float(b)
-        bot.send_message(message.chat.id, f"{a} / {b} = {result}")
+        if b == "0":
+            bot.send_message(message.chat.id, f"На ноль делить нельзя!")
+            bot.send_message(message.from_user.id, "Посчитать ещё? /calculate")
+        else:
+            result = float(a) / float(b)
+            bot.send_message(message.chat.id, f"{a} / {b} = {result}")
+            bot.send_message(message.from_user.id, "Посчитать ещё? /calculate")
     else:
-        return "Некорректный ввод"
-
+        bot.send_message(message.chat.id, f"Некорректный ввод")
+        bot.send_message(message.from_user.id, "Посчитать ещё? /calculate")
 
 bot.infinity_polling()
