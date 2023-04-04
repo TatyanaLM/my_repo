@@ -10,15 +10,6 @@ class Card():
     def __init__(self, num, mast="none"):
         self.num = num
         self.mast = mast
-        #self._assign_attributes()
-
-'''    def _assign_attributes(self, num, mast):
-        if NumsList[num]:
-            self.num = num
-        num_dict = NumsList[self.num]
-        mast_dict = NumsList[self.mast]
-        self.num = num_dict[
-        self.mast = mast_dict['attack']'''
 
 class DeckofCards():
 
@@ -37,8 +28,15 @@ class DeckofCards():
     def shuffle(self):
         random.shuffle(self.deck)
 
-    def get(self):
-        result = self.deck[random.randint(0, 54)]
+    def get(self, index):
+        if index < len(self.deck):
+            if len(self.deck) > 0:
+                result = self.deck[index]
+                self.deck.remove(self.deck[index])
+            else:
+                result = "Карты кончились"
+        else:
+            return "Такого индекса нет в колоде"
         return result
     #def shuffle(self,):
 
@@ -47,9 +45,12 @@ class DeckofCards():
 
 deck = DeckofCards()
 deck.shuffle()
-#for c in deck.deck:
-    #print(c.mast, c.num)
-
-random_cart = deck.get()
-#print(deck.get())
+random_cart = deck.get(53)
 print(random_cart.mast, random_cart.num)
+for c in deck.deck:
+    print(c.mast, c.num)
+
+print(len(deck.deck))
+#print(deck.deck)
+#print(deck.get())
+#print(random_cart.mast, random_cart.num)
