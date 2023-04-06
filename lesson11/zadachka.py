@@ -39,18 +39,21 @@ class DeckofCards():
             return "Такого индекса нет в колоде"
         return result
     #def shuffle(self,):
-
-
     #def get(self, ):
 
 deck = DeckofCards()
 deck.shuffle()
-random_cart = deck.get(53)
-print(random_cart.mast, random_cart.num)
-for c in deck.deck:
-    print(c.mast, c.num)
+#random_cart = deck.get(3)
+#print(random_cart)
 
-print(len(deck.deck))
+for c in range(54):
+    print(c)
+    random_cart = deck.get(0)
+    print(random_cart.mast, random_cart.num)
+    print(len(deck.deck))
+    print("\n")
+
+
 #print(deck.deck)
 #print(deck.get())
 #print(random_cart.mast, random_cart.num)
