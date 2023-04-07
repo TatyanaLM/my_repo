@@ -30,7 +30,7 @@ class ForeignPassport(Passport):
         end = datetime.strptime(self.exp_date, "%d/%m/%y")
         diff = (end - start)
         print(f" Осталось дней: {diff}")
-    def next_visa(self):
+    #def next_visa(self):
 
 
 
