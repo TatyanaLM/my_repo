@@ -19,10 +19,7 @@ class ForeignPassport(Passport):
         self.visa = visa
 
     def PrintInfo(self):
-        print(f"Name: {self.sname} {self.name}.")
-        print(f'Date: {self.date}.')
-        print(f'Country: {self.country}.')
-        print(f'Passport number: {self.number}.')
+        super().PrintInfo()
         print(f'Visa: {self.visa}.')
 
 
