@@ -16,8 +16,8 @@ class Student:
     def add_student(cls, student):
         cls.students.append(student)
 
-    def change_course(self, course):
-        self.course = course
+    def change_course(self, new_course):
+        self.course = new_course
 
     @classmethod
     def print_students(cls):
@@ -33,7 +33,7 @@ class Student:
         print(result)
 
 # создаем объекты студентов
-student1 = Student("Иван", "Иванов", 1, 4.5)
+student1 = Student("Иван", "Иванов", 1000, 4.5)
 student2 = Student("Петр", "Петров", 2, 3.7)
 
 # добавляем студента
@@ -41,9 +41,10 @@ student3 = Student("Сергей", "Сергеев", 1, 4.0)
 Student.add_student(student1)
 Student.add_student(student2)
 Student.add_student(student3)
-
+Student.print_students()
+print("\n")
 # изменяем данные студента
-student1.change_course(4)
+student1.change_course(10)
 
 # выводим информацию о всех студентах
 Student.print_students()
